@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <title>About</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+        *{box-sizing: border-box;}
+
+        html, body {height: 100%;}
+
+        body {
+            background-color: #ffffff;
+            margin: 0 auto; 
+            font-family: "Inter", sans-serif;
+            overflow-x: hidden;}
+
+        .fade-in-text{
+            opacity: 0;
+            transition: opacity 0.9s ease-in-out;
+        }
+
+        .fade-in-text.visible {opacity: 1;}
+
+        .slide-up {
+            opacity: 0;
+            transform: translateY(70px);
+            transition: opacity 0.6s ease, transform 0.8s ease;
+        }
+
+        .slide-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            grid-template-rows: auto auto 60px; 
+            grid-template-areas: 
+                "nav nav"
+                "main main"
+                "footer footer";}
+            
+        .nav{grid-area: nav;
+            padding: 20px 8%;
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            color: black; 
+            text-decoration: none;
+            font-family: Inter;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+
+        .nav h1:hover{color: rgb(132, 49, 89);}
+
+        .nav ul a, .nav h1{transition: 0.5s ease;}
+
+        .nav ul a:hover{color: rgb(132, 49, 89);
+            /*text-decoration: underline; 
+            text-decoration-thickness: 3px; 
+            text-underline-offset: 10px;*/}
+
+        .hamburger{display: none;}
+        .mobile-nav{display: none;}
+
+        .main{grid-area: main;
+            padding-top: 50px;
+            padding-bottom: 100px;
+            padding-left: 8%;
+            padding-right: 8%;}
+
+        .block1{display: flex; gap: 10%; border-radius: 20px;}
+
+        .intro-text{width: 250vw; 
+            height: auto;
+            font-size: 18px;
+            font-style: normal;
+            line-height: 30px;
+        }
+
+        .contacts{
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;}
+
+        .intro-img{width: 180vw; 
+            height: 77vh; 
+            background-image: url("images/pic1.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 1000px;
+            position: relative;
+            border-radius: 8px; 
+            margin-top: 75px;}
+
+        .block2{
+            margin-top: 50px;
+            margin-bottom: 70px;
+            background-color: #feaed7;
+            /* background-image: url("images/header-background");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 1200px;
+            position: relative; */
+            border-radius: 20px;
+            padding: 30px 12%;}
+
+        .lists{display: flex; gap: 20%;}
+        .lists-mobile{display: none;}
+
+        .block2 h1{margin-bottom: 20px;
+            margin-top: 0px;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 700;}
+
+        .block2 h2{font-size: 24px;
+            font-style: normal;
+            font-weight: 650;
+            line-height: 30px;
+            margin-top: 10px;
+            margin-bottom: 10px;}
+
+        .lists p{margin: 0px;
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 550;
+            line-height: 30px;}
+        
+        .block3{margin-top: 40px; margin-bottom: 20px;}
+        .block3 h2{font-size: 27px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            margin-bottom: 40px;}
+        
+        .block3 h3{font-size: 20px;
+            font-style: normal;
+            font-weight: 550;
+            line-height: normal;
+            margin-bottom: 30px;}
+
+        .block3 a{font-size: 17px;
+            font-style: normal;
+            font-weight: 500;
+            margin-bottom: 30px;
+            color: rgb(144, 53, 68);}
+
+        .img-container{display: flex;
+            flex-direction: row;
+            column-gap: 40px;
+            padding-bottom: 30px;}
+
+        .img-container-1{display: none;}
+
+        .img1, .img2{width: 30vw; 
+            height: 250px;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            border-radius: 5px;}
+
+        .img1{background-image: url("images/pic1.png");}
+        .img2{background-image: url("images/pic2.png");}
+
+        .footer{grid-area: footer;
+            background-color: #e8bdbd;
+            padding: 5px 8%;
+            background: url(images/footer-background.png) lightgray 50% / cover no-repeat;}
+
+        .footer p{color: #905565;
+            font-size: 17px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;}
+
+        @media(max-width: 1130px){
+            .block2 h1{font-size: 25px;}
+            .block2 h2{font-size: 20px;}
+            .block2 p{font-size: 15px;
+                line-height: 27px;}
+        }
+
+        @media(max-width: 1000px){
+            .lists{gap:15%;}
+        }
+
+        @media(max-width: 900px){
+            .img-container{display: none;}
+
+            .img-container-1{display: block;
+                width: 100%; height: 300px; 
+                border-radius: 10px;
+                background-color: #feb5e1;
+                background-image: url("images/img-container.png");
+                background-size: 500px;
+                background-position: center;
+                background-repeat: no-repeat;
+                position: relative;
+                transition: background-size 0.3s ease;}
+
+            .img1{grid-area: img1; width: 40vw; height: 30vh;}
+            .img2{grid-area: img2; width: 40vw; height: 30vh;}
+            .img3{grid-area: img3; height: 70vh; width: 37vw;}
+            .img-container-1{margin-bottom: 50px;}
+
+            .slide-up {
+                opacity: 0;
+                transform: translateY(70px);
+                transition: opacity 0.6s ease, transform 0.8s ease;
+            }
+
+            .slide-up.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media(max-width: 800px){.block2{padding: 30px 8%;}}
+
+        @media(max-width: 700px){
+            .nav-links {display: none;}
+            
+            .hamburger {
+                display: block;
+                position: relative;
+                width: 50px;
+                height: 10px;
+                cursor: pointer;
+                background: none;
+                border: none;
+                padding-bottom: 45px;
+                z-index: 100;
+                transform: scale(0.8);
+            }
+
+            .hamburger .bar, .hamburger:after, .hamburger:before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 4px;
+                background-color: #000000;
+                margin: 6px 0;
+                transition: 0.4s;
+            }
+
+            .hamburger.is-active:before {
+                transform: rotate(-45deg) translate(-8px, 6px);
+            }
+
+            .hamburger.is-active:after {
+                transform: rotate(45deg) translate(-8px, -7px);
+            }
+
+            .hamburger.is-active .bar {opacity: 0;}
+
+            .mobile-nav {
+                position: fixed;
+                top: 0;
+                left: 100%;
+                width: 100%;
+                min-height: 100vh;
+                display: block;
+                z-index: 98;
+                background-color: #fca8e3;
+                padding-top: 120px;
+                transition: 0.4s;
+                color: black; 
+                text-decoration: none;
+                font-family: Inter;
+                font-size: 19px;
+                font-style: normal;
+                font-weight: 550;
+                line-height: normal;
+            }
+
+            .mobile-nav.is-active {left: 0;}
+
+            .mobile-nav a {
+                display: block;
+                width: 100%;
+                max-width: 200px;
+                margin: 0 auto 16px;
+                text-align: center;
+                padding: 12px 16px;
+                background-color: #fca8e3;
+                /* background-color: #FCA6C5; */
+                color: black;
+                text-decoration: none;
+                border-radius: 30px;
+            }
+
+            /* .mobile-nav a:hover {background-color: #e994b3;} */
+            .mobile-nav a:hover {background-color: #ee9dd6;}
+        
+            .no-scroll {overflow: hidden;}
+        }
+
+        @media(max-width: 720px){
+            .nav-links {
+                gap: 25px;}
+
+            .lists{gap: 10%;}
+        }
+
+        @media (max-width: 650px){
+            .grid-container {
+                display: grid;
+                grid-template-columns: 1fr; 
+                grid-template-rows: auto auto 60px; 
+                grid-template-areas: 
+                    "nav"
+                    "main"
+                    "footer"}
+
+            .block1{display: flex;
+                flex-direction: column-reverse; row-gap: 50px;}
+            .intro-text{width: 80vw;}
+            .intro-img{width: 80vw; height: 50vh; margin-top: 0px;}
+            .block2{padding-top: 40px; padding-bottom: 20px; padding-left: 10%; padding-right: 10%;}
+            .lists{display: none;}
+            .block2 h1{margin-bottom: 40px;}
+            .lists-mobile{display: block;}
+            .lists-mobile h2{margin-bottom: 0px;}
+            .lists-mobile p{padding-bottom: 7px; 
+                margin-top: 5px;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 550;
+                line-height: 30px;}
+        }
+
+        @media(max-width: 550px){
+            .img-container-1{background-size: 400px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="section nav" id="nav">
+            <a href="home.html" style="cursor: pointer; text-decoration: none; color: black;"><h1>JARIN.</h1></a>
+            <ul class="nav-links">
+                <a href="#nav" style="text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 10px;">About</a>
+                <a href="home.html#main">UX Design</a>
+                <a href="assets/resume.pdf" target="_blank">Resume</a>
+                <a href="fun.html">Fun</a>
+            </ul>
+            <button class="hamburger">
+                <div class="bar"></div>
+            </button>
+        </div>
+        <div class="nav-menu">
+            <nav class="mobile-nav">
+                <a href="#nav" style="text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 10px;">About</a>
+                <a href="home.html#main">UX Design</a>
+                <a href="assets/resume.pdf" target="_blank">Resume</a>
+                <a href="fun.html">Fun</a>
+            </nav>
+        </div>
+        <div class="section main">
+            <div class="block1">
+                <div class="intro-text">
+                    <h1 class="fade-in-text" style="margin-top: 0px; margin-bottom: 30px; font-size: 35px; font-style: normal; font-weight: 700; line-height: normal; color: rgb(229, 94, 135);">Hi, I’m Jarin! 🌺</h1>
+                    <div class="intro-text-paragraph" style="font-weight: 500;">
+                        <p class="fade-in-text">I am an aspiring UX Designer from NYC, with academic background in <b>Psychology and Design</b> from Baruch College.</p>
+                        <p class="fade-in-text">I am passionate about exploring the intersection of Psychology and Technology. I use my knowledge in Psychology to address both <b>users 
+                            and business needs</b>, and create user-friendly tech products for everyone.</p>
+                        <p class="fade-in-text">I also enjoy <b>collaborating with tech peers</b>, brainstorming solutions to address product problems, and improving design in Technology. As a previous <b>Web Development fellow at Break Through Tech</b>, I had the pleasure of working with my team to create a website using Front-end programming, and gain experience in <b>user-centered design</b>, <b>prototyping</b>, and <b>optimizing user experience</b>.</p>
+                        <p class="fade-in-text">I would love to <b>explore more apprenticeships and internships</b> to work with UX professionals and mentors across industries, and learn more about improving UX and design in Technology.</p>
+                    </div>
+                    <p class="fade-in-text" style="font-weight: 700; font-size: 20px;">Feel free to connect with me!</p>
+                    <div class="contacts fade-in-text">
+                        <a class="linkedin" href="https://www.linkedin.com/in/jarin-a-062a50212/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 48 48" fill="none">
+                                <path d="M24.0476 6.10352e-05H23.9384C10.7176 6.10352e-05 6.10352e-05 10.7208 6.10352e-05 23.9454V24.0547C6.10352e-05 37.2794 10.7176 48.0001 23.9384 48.0001H24.0476C37.2684 48.0001 47.9859 37.2794 47.9859 24.0547V23.9454C47.9859 10.7208 37.2684 6.10352e-05 24.0476 6.10352e-05Z" fill="rgb(229, 94, 135)"/>
+                                <path d="M11.4437 15.9542C10.8116 15.3673 10.4972 14.6409 10.4972 13.7765C10.4972 12.9121 10.8132 12.1537 11.4437 11.5651C12.0758 10.9782 12.8895 10.6839 13.8864 10.6839C14.8834 10.6839 15.6651 10.9782 16.2956 11.5651C16.9277 12.152 17.2421 12.8902 17.2421 13.7765C17.2421 14.6627 16.926 15.3673 16.2956 15.9542C15.6635 16.5411 14.8615 16.8354 13.8864 16.8354C12.9113 16.8354 12.0758 16.5411 11.4437 15.9542ZM16.7108 19.3209V37.3148H11.0267V19.3209H16.7108Z" fill="white"/>
+                                <path d="M35.6324 21.0981C36.8714 22.4435 37.4901 24.29 37.4901 26.641V36.9967H32.0919V27.3708C32.0919 26.1852 31.7842 25.2636 31.1706 24.6078C30.5569 23.9519 29.7298 23.6223 28.6942 23.6223C27.6586 23.6223 26.8314 23.9503 26.2178 24.6078C25.6042 25.2636 25.2965 26.1852 25.2965 27.3708V36.9967H19.8663V19.2702H25.2965V21.6211C25.8463 20.8375 26.5877 20.2186 27.5191 19.7629C28.4504 19.3072 29.4978 19.0801 30.6629 19.0801C32.7374 19.0801 34.395 19.7528 35.6324 21.0965V21.0981Z" fill="white"/>
+                            </svg>
+                        </a>
+
+                        <a class="github" href="https://github.com/jarinanz" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 49 48" fill="none">
+                                <g clip-path="url(#clip0_10_505)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M24.3626 6.86646e-05C11.0842 6.86646e-05 0.349854 10.8135 0.349854 24.1913C0.349854 34.8848 7.22771 43.9367 16.7691 47.1404C17.9621 47.3813 18.399 46.6199 18.399 45.9795C18.399 45.4186 18.3597 43.4963 18.3597 41.4933C11.6799 42.9355 10.2889 38.6096 10.2889 38.6096C9.21543 35.8059 7.62486 35.0854 7.62486 35.0854C5.43858 33.6034 7.78412 33.6034 7.78412 33.6034C10.2093 33.7637 11.4818 36.0866 11.4818 36.0866C13.6283 39.771 17.0871 38.73 18.4786 38.0891C18.6772 36.527 19.3137 35.4457 19.9896 34.845C14.662 34.2842 9.05667 32.2016 9.05667 22.9094C9.05667 20.266 10.0102 18.1033 11.5212 16.4213C11.2828 15.8207 10.4477 13.337 11.76 10.0129C11.76 10.0129 13.7876 9.37191 18.3592 12.496C20.3165 11.9665 22.335 11.6971 24.3626 11.6948C26.3902 11.6948 28.457 11.9755 30.3656 12.496C34.9377 9.37191 36.9653 10.0129 36.9653 10.0129C38.2776 13.337 37.442 15.8207 37.2036 16.4213C38.7544 18.1033 39.6686 20.266 39.6686 22.9094C39.6686 32.2016 34.0633 34.2439 28.6959 34.845C29.5708 35.6059 30.3258 37.0475 30.3258 39.3306C30.3258 42.5747 30.2865 45.1783 30.2865 45.979C30.2865 46.6199 30.7239 47.3813 31.9164 47.1409C41.4578 43.9362 48.3356 34.8848 48.3356 24.1913C48.375 10.8135 37.6013 6.86646e-05 24.3626 6.86646e-05Z" fill="rgb(229, 94, 135)"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_10_505">
+                                    <rect width="47.9859" height="47.9859" fill="white" transform="translate(0.349854 6.86646e-05)"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="block2 slide-up">
+                <h1>👩🏻‍💻 My Skills</h1>
+                <div class="lists">
+                    <div class="list1">
+                        <h2>Key Skills</h2>
+                        <p>UX Research</p>
+                        <p>UX Stragety</p>
+                        <p>Prototyping</p>
+                        <p>Wireframing</p>
+                        <p>Visual Design</p>
+                    </div>
+                    <div class="list2">
+                        <h2>Soft Skills</h2>
+                        <p>Design thinking</p>
+                        <p>Problem Solving</p>
+                        <p>User Empathy</p>
+                        <p>Collaboration</p>
+                    </div>
+                    <div class="list3">
+                        <h2>Technical/ Design</h2>
+                        <p>Figma</p>
+                        <p>Adobe Photoshop</p>
+                        <p>Adobe After Effects</p>
+                        <p>Visual Studio Code</p>
+                        <p>HTML & CSS</p>
+                        <p>Python</p>
+                    </div>
+                </div>
+                <div class="lists-mobile">
+                    <div class="list1">
+                        <h2>Key Skills</h2>
+                        <p>UX Research, UX Stragety, Prototyping, Wireframing, Visual Design</p>
+                    </div>
+                    <div class="list2">
+                        <h2>Soft Skills</h2>
+                        <p>User Empathy, Design thinking, Problem Solving, Collaboration</p>
+                    </div>
+                    <div class="list3">
+                        <h2>Tools I use</h2>
+                        <p>Figma, Adobe Photoshop, Adobe After Effects, HTML & CSS</p>
+                    </div>
+                </div> 
+            </div>
+            <hr>
+            <div class="block3">
+                <h2 class="fade-in-text">🎨 In my free time, I love to.. </h2>
+                <h3 class="fade-in-text">take some photos and design posters!</h3>
+                <div class="img-container slide-up">
+                    <div class="img1"></div>
+                    <div class="img2"></div>
+                    <img class="img3" src="images/poster-design-2.jpeg" width=auto height="260vw" style="border-radius: 5px;">
+                </div>
+                <div class="img-container-1 slide-up"></div>
+                <a class="fade-in-text" href="fun.html" style="text-underline-offset: 7px;">💗 Click here to view my other projects! ↗</a>
+            </div>
+        </div>
+        <div class="section footer">
+            <p class="fade-in-text" >Designed and Coded by Jarin © 2024</p>
+        </div>
+    </div>
+    <script>
+        // Function to check if an element is in the viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top < window.innerHeight && 
+                rect.bottom > 0
+            );
+        }
+
+        // Function to add 'visible' class to elements in the viewport
+        function handleScroll() {
+            const fadeIns = document.querySelectorAll('.fade-in-text');
+            const slideUps = document.querySelectorAll('.slide-up');
+
+            fadeIns.forEach((el) => {
+                if (isInViewport(el)) {
+                    el.classList.add('visible');
+                }
+            });
+
+            slideUps.forEach((el) => {
+                if (isInViewport(el)) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        // Listen for scroll events
+        window.addEventListener('scroll', handleScroll);
+
+        // Trigger the function once to check the initial state
+        handleScroll();
+
+        // Hamburger Menu Icon Animation //
+        document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector('.hamburger');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const body = document.body;
+
+            hamburger.addEventListener('click', () => {
+                const isActive = mobileNav.classList.toggle('is-active');
+                // Toggle no-scroll class on the body
+                body.classList.toggle('no-scroll', isActive);
+                // Toggle hamburger icon animation
+                hamburger.classList.toggle('is-active');
+            });
+        });
+    </script>
+</body>
+</html>

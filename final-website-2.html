@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <title>Donation</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+        *{box-sizing: border-box;}
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            background-color: #FFFBE7;
+            margin: 0 auto; 
+            font-family: "Inter", sans serif;
+        }
+
+        .grid-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr; 
+            grid-template-rows: 60px 0.5fr 1fr 100px;
+            grid-template-areas:
+                "nav nav nav nav"
+                "section-1 section-1 section-1 section-1"
+                "section-3 section-3 section-3 section-3"
+                "footer footer footer footer";}
+
+        .nav{grid-area: nav;
+            background-color: #214339;
+            padding-left: 10%;
+            padding-right: 10%;}
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            column-gap: 5%;
+            text-align: center;
+            height: 100%;
+        }
+
+        .nav-buttons{
+            text-decoration: none;
+            color: white;
+            padding-top: 9px;
+            padding-bottom: 9px;
+            font-size: 17px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .button-1{
+            padding-left: 3%;
+            padding-right: 3%;
+        }
+
+        .button-2, .button-3 {
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+
+        .nav-buttons:hover{
+            text-decoration: none;
+            box-shadow: inset 0 0 0 2px white;
+        }
+
+        .section-1{grid-area: section-1;
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-top: 30px;
+            padding-bottom: 50px;}
+
+        .container{
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .heart-icon:hover{
+            transform: rotate(15deg);
+        }
+
+        .cont-1 h1{
+            color:#133e31;
+            text-align: center;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            padding-bottom: 5px;
+        }
+
+        .cont-1 p{
+            text-align: center;
+            font-family: Inter;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+        .button-4{
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            column-gap: 5%;
+            text-align: center;
+            height: 100%;
+        } 
+
+        .button-4 a{
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            background-color: #295246;
+            border-radius: 50px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 45px;
+            padding-right: 45px;
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .button-4 a:hover{
+            background-color: #3e665b;
+        }
+
+        .cont-2{
+            margin-top: 50px;
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .cont-2 h3{
+            color: rgb(78, 45, 45);
+            font-size: 22px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 700;
+            padding-bottom: 10px;
+        }
+
+        .img-container-1 img{
+            padding-left: 20px;
+            padding-right: 20px;
+            transition: transform 0.2s ease;
+            padding-bottom: 15px;
+        }
+
+        .img-container-1 img:hover{
+            transform: rotate(-10deg);
+        }
+        
+        .section-3{grid-area: section-3;
+            background-color: #295246;
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-top: 50px;
+            padding-bottom: 50px;}
+
+        .cont-3 h1{
+            color: white;
+            text-align: left;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            padding-bottom: 5px;
+        }
+
+        .cont-3 p{
+            color: white;
+            text-align: left;
+            font-family: Inter;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 450;
+            line-height: normal;
+        }
+
+        .bear-pic{
+            padding-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            transform: scale(0.95);
+        }
+
+        .button-5{
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            column-gap: 5%;
+            text-align: center;
+            height: 100%;
+        } 
+
+        .button-5 a{
+            text-decoration: none;
+            color: #295246;;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            background-color: #ffffff;
+            border-radius: 50px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 45px;
+            padding-right: 45px;
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .button-5 a:hover{
+            background-color: #133e31;
+            color: white;
+        }
+
+        .footer{grid-area: footer;
+            background-color: #214339;
+            padding-left: 10%;
+            padding-right: 10%;}
+
+        .footer-links{
+            color: #d8e5e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            column-gap: 7%;
+            text-align: center;
+            height: 80%;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .footer-links a:hover{
+            text-decoration: underline;
+        }
+
+        .footer-credits{
+            color: #d8e5e1;
+            font-size: 15px;
+            position: relative;
+            bottom: 35px;
+            right: 80px;}
+
+        .footer-credits a{
+            color: #d8e5e1;}
+
+        @media(max-width: 1000px){
+            .footer-credits{
+                margin-left: 4%;
+            }
+        }
+
+        @media(max-width: 800px){
+            .grid-container{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr; 
+                grid-template-rows: 60px 0.5fr 1fr 120px;
+                grid-template-areas:
+                    "nav nav nav nav"
+                    "section-1 section-1 section-1 section-1"
+                    "section-3 section-3 section-3 section-3"
+                    "footer footer footer footer";}
+
+            .footer-links{
+                height: 75%;}
+
+            .footer-credits{
+                margin-top: 20px;
+                margin-left: 7%;
+            }
+        }
+
+        @media(max-width: 630px) {
+            .grid-container{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr; 
+                grid-template-rows: 60px 0.5fr 1fr 120px;
+                grid-template-areas:
+                    "nav nav nav nav"
+                    "section-1 section-1 section-1 section-1"
+                    "section-3 section-3 section-3 section-3"
+                    "footer footer footer footer";}
+            
+            .bear-pic{
+                padding-top: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+                transition: transform 0.2s ease;
+                height: 400px;
+            }
+
+            .footer-links{
+                height: 70%;
+            }
+
+            .footer-credits{
+                text-align: center;
+                margin-left: 35%;
+                margin-top: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="section nav"">
+            <div class="navbar">
+                <a class="nav-buttons button-1" href="final-website-1.html"><b>About</b></a>
+                <a class="nav-buttons button-2" href="final-website-2.html"><b>Donation</b></a>
+                <a class="nav-buttons button-3" href="final-website-3.html"><b>View Books</b></a>
+            </div>
+        </div>
+        <div class="section section-1">
+            <div class="container cont-1">
+                <h1 class="heart-icon" style="transform:scale(1.2); margin-bottom: 0px;">❤️</h1>
+                <h1 style="margin-top: 10px;">Support English Education for Children in Bangladesh by Donating today!</h1>
+                <p>Your generosity has the power to change lives. Join us in our mission to provide English language education to children in Bangladesh, unlocking doors of opportunity and empowerment.</p>
+                <p>Every donation brings us closer to ensuring that every child has access to quality education and a brighter future. Explore our donation page now and make a difference in the lives of young learners in Bangladesh.</p>
+                <br> 
+                <div class="button button-4">
+                    <a>DONATE TODAY</a>
+                </div>
+            </div>
+            <div class="container cont-2">
+                <h3>We accept the following Payment Methods</h3>
+                <div class="img-container-1">
+                    <img src="images/Amex.png" width=auto height="80px">
+                    <img src="images/Visa.png" width=auto height="80px">
+                    <img src="images/final-wb-sub1 (3).png" width=auto height="80px">
+                    <img src="images/final-wb-sub1 (2).png" width=auto height="80px">
+                    <img src="images/final-wb-sub1 (1).png" width=auto height="80px">
+                    <img src="images/final-wb-sub1 (4).png" width=auto height="80px">
+                </div>
+            </div>
+        </div>
+        <div class="section section-3">
+            <div class="container cont-3">
+                <h1>Donate Books, Clothes, and Money to Transform Lives</h1>
+                <p>Every child deserves the opportunity to learn, grow, and thrive. In Bangladesh, many children face significant barriers to education and basic necessities, limiting their potential and future prospects. By donating books, clothes, and financial resources, you can play a vital role in changing the lives of these children. Your contributions will provide essential educational materials, warm clothing, and financial support to ensure that children in Bangladesh have the tools they need to succeed.</p>
+                <br>
+                <div class="cont-3-text-2">
+                    <p><b>📦 SAFE AND SECURE DONATIONS:</b></p>
+                    <p>We understand the importance of security and privacy when making online donations. Our website uses advanced encryption technology to ensure that your payment information is protected. We do not store any payment details on our servers, giving you peace of mind that your personal information remains secure. Whether you choose to donate via credit card, PayPal, or other payment methods, you can trust that your contribution is handled with the utmost care and security.</p>
+                    <p>We also have central donation centers for physical donations in NYC, California, and Chicago for your convenience. To help you track your delivery, we also offer delivery tracking details on our website. For details, visit our "Donate" page or contact our support team.</p>
+                    <p>📌 Check our FAQs if you have any questions.</p>
+                    <br> 
+                    <div class="button button-5">
+                        <a>FAQS</a>
+                    </div>
+                </div>
+            </div>
+            <img class="bear-pic" src="images/file-bear.png" width=auto height="500px;">
+        </div>
+        <div class="section footer" id="footer">
+            <div class="footer-links">
+                <a class="footer-link link-1">Resources</a>
+                <a class="footer-link link-2">FAQs</a>
+                <a class="footer-link link-3">Policy</a>
+                <a class="footer-link link-4">Contact Us</a>
+            </div>
+            <div class="footer-credits">
+                <p><p>&copy; 2024 <a href="https://yourportfolio.com" target="_blank">Jarin Anzum</a></p></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

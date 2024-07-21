@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <title>Home</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+        *{box-sizing: border-box;}
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            background-color: #FFFBE7;
+            margin: 0 auto; 
+            font-family: "Inter", sans serif;
+            overflow-x: hidden;
+        }
+
+        .grid-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr; 
+            grid-template-rows: 60px auto auto auto auto auto 100px;
+            grid-template-areas:
+                "nav nav nav nav"
+                "header header header header"
+                "section-1 section-1 section-1 section-1"
+                "section-2 section-2 section-2 section-2"
+                "section-3 section-3 section-3 section-3"
+                "section-4 section-4 section-4 section-4"
+                "footer footer footer footer";
+        }
+
+        .nav{grid-area: nav;
+            background-color: #214339;
+            padding-left: 10%;
+            padding-right: 10%;}
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            column-gap: 5%;
+            text-align: center;
+            height: 100%;
+        }
+
+        .nav-buttons{
+            text-decoration: none;
+            color: white;
+            padding-top: 9px;
+            padding-bottom: 9px;
+            font-size: 17px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .button-1{
+            padding-left: 3%;
+            padding-right: 3%;
+        }
+
+        .button-2, .button-3 {
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+
+        .nav-buttons:hover{
+            text-decoration: none;
+            box-shadow: inset 0 0 0 2px white;
+        }
+
+        .header{grid-area: header;
+            background-color: #162E27;
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-top: 40px;
+            padding-bottom: 60px;}
+        
+        .header-container{
+            display: grid;
+            grid-template-columns: 0.8fr 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: 
+                "header-grid-1 header-grid-2";
+        }
+
+        .header-grid-1{grid-area: header-grid-1;
+            padding-right: 70px;
+            display: flex;
+            justify-content: right;
+            align-items: center;}
+
+        .header-grid-2{grid-area: header-grid-2;
+            color: white;
+            padding-left: 0px;
+            padding-right: 0px;
+            }
+
+        .header-grid-2 h1{
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+        }
+        .header-grid-2 p{
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .button-4{
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;}
+
+        .button-4 a{
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            background-color: #AE3030;
+            border-radius: 50px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 45px;
+            padding-right: 45px;
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .button-4 a:hover{
+            background-color: #c53939;
+        }
+
+        .section-1{grid-area: section-1;
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-top: 70px;
+            padding-bottom: 70px;
+            margin: 0 auto;}
+
+        .section-1-box{
+            display: flex;
+            flex-direction: row;
+            gap: 80px;
+        }
+        
+        .section-1-box{
+            text-align: center;
+        }
+
+        /* .pic-1, .pic-2, .pic-3{
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .pic-1:hover{transform: scale(1.1);}
+
+        .pic-2:hover{transform: scale(1.1);}
+
+        .pic-3:hover{transform: scale(1.1);} */
+
+        .section-2{grid-area: section-2;
+            background-color: #295246;
+            padding-left: 15%;
+            padding-right: 15%;
+            padding-top: 30px;
+            padding-bottom: 30px;}
+
+        .section-2-text{
+            text-align: center;
+        }
+
+        .section-2-text h1, .section-2-text p{
+            color: white;
+        }
+
+        .section-2-text h1{
+            font-size: 35px;
+            font-style: normal;
+            font-weight: 700;
+            padding-top: 10px;
+        }
+
+        .section-2-text p{
+            color: white;
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 450;
+            line-height: 23px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .button-5 {
+            margin: 0 auto;
+            flex-direction: row;
+            height: 100%;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+
+        .button-5 a{
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            background-color: #AE3030;
+            border-radius: 50px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 45px;
+            padding-right: 45px;
+            transition: transform 0.2s ease;
+        }
+
+        .button-5 a:hover{
+            background-color: #c53939;
+        }
+
+        .section-3{grid-area: section-3;
+            background-color: #295246;
+            padding-left: 13%;
+            padding-right: 13%;
+            padding-bottom: 50px;}
+        
+        .section-3-box{
+            background-color: #FFFBE7;
+            display: grid; 
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 
+                "box-text box-text box-text"
+                "smallbox-1 smallbox-2 smallbox-3";
+            border-radius: 20px;
+        }
+
+        .box-text{grid-area: box-text;
+            text-align: center;
+            padding-top: 20px;
+            padding-left: 10%;
+            padding-right: 10%;}
+
+        .box-text p{
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 450;
+        }
+
+        .smallbox-1, .smallbox-2, .smallbox-3 {
+            text-align: center;
+            padding-left: 15%;
+            padding-right: 10%;
+            padding-bottom: 10px;
+            padding-top: 15px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .smallbox-1 h2, .smallbox-2 h2, .smallbox-3 h2{
+            color: white;
+            background-color:#925252;
+            border-radius: 20px;
+            width: 40px;
+            height: 40px;
+            padding-top: 5px;
+            margin: 0 auto;
+        }
+
+        .smallbox-1 h4, .smallbox-2 h4, .smallbox-3 h4{
+            color: #8a5454;
+        }
+            
+        .smallbox-1{grid-area: smallbox-1;
+            margin-left: 35px;}
+        .smallbox-2{grid-area: smallbox-2;
+            padding-left: 10px;
+            padding-right: 10px;}
+        .smallbox-3{grid-area: smallbox-3;
+            margin-right: 35px;}
+
+        .sticker-1, .sticker-2, .sticker-3{
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .sticker-1:hover{
+            transform: scale(1.2);
+        }
+
+        .sticker-2:hover{
+            transform: scale(1.2);
+        }
+        .sticker-3:hover{
+            transform: scale(1.2);
+        }
+
+        .section-4{grid-area: section-4;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 100px;
+            grid-template-areas:
+                "text text"
+                "button-section button-section";
+            padding-top: 50px;
+            padding-bottom: 60px;
+            padding-left: 15%;
+            padding-right: 15%;}
+        
+        .text{grid-area: text;
+            text-align: center;
+            margin: 0 auto;}
+
+        .text h1{
+            font-size: 35px;
+            margin: 0px;
+            color: #AE3030;
+            font-style: normal;
+            font-weight: 700;
+            padding-top: 10px;
+        }
+
+        .icon{
+            transform: rotate(25deg);
+            transition: transform 0.2s ease;
+        }
+
+        .icon:hover{
+            transform: rotate(20deg) scale(1.2);
+        }
+
+        .text p{
+            font-size: 18px;
+            color: #1E1E1E;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .button-section{grid-area: button-section;}
+
+        .button-6 {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            column-gap: 5%;
+            text-align: center;
+            height: 100%;
+        }
+        
+        .button-6 a{
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            background-color: #295246;
+            border-radius: 50px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 45px;
+            padding-right: 45px;
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .button-6 a:hover{
+            background-color: #3e665b;
+        }
+
+        .footer{grid-area: footer;
+            background-color: #214339;
+            padding-left: 10%;
+            padding-right: 10%;}
+
+        .footer-links{
+            color: #d8e5e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            column-gap: 7%;
+            text-align: center;
+            height: 40px;
+            font-size: 17px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .footer-links a:hover{
+            text-decoration: underline;}
+
+        .footer-credits{
+            color: #d8e5e1;
+            font-size: 15px;
+            position: relative;
+            bottom: 10px;
+            right: 80px;}
+
+        .footer-credits a{
+            color: #d8e5e1;}
+
+        /* Media queries Note: each column is 300 width */
+        /* Media queries for 1020px width*/
+        @media(max-width: 1020px){
+            .section-1{padding-left:5%;}
+
+            .pic-1, .pic-2, .pic-3{height: 200px;}
+
+            .section-1-box{
+                display: flex;
+                flex-direction: row;
+                gap: 30px;
+            }
+
+            .footer-credits{
+                position: relative;
+                bottom: 10px;
+                right: 60px;}
+        }
+
+        @media(max-width: 950px){
+            .grid-container{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr; 
+                grid-template-rows: 60px auto auto auto auto auto 100px;
+                grid-template-areas:
+                    "nav nav nav nav"
+                    "header header header header"
+                    "section-1 section-1 section-1 section-1"
+                    "section-2 section-2 section-2 section-2"
+                    "section-3 section-3 section-3 section-3"
+                    "section-4 section-4 section-4 section-4"
+                    "footer footer footer footer";
+            }
+
+            .header-container{
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 250px;
+                grid-template-areas: 
+                    "header-grid-2"
+                    "header-grid-1";
+            }
+
+            .header-grid-2{
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            .header-grid-1{
+                padding-right: 150px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .header-grid-1 img{
+                height: 320px;
+            }
+
+            .pic-2{
+                display: none;
+            }
+
+            .section-1-box{
+                display: flex;
+                flex-direction: row;
+                gap: 60px;
+            }
+
+            .pic-1, .pic-2, .pic-3{
+                height: 220px;
+            }
+
+            .footer-credits{
+                position: relative;
+                bottom: 10px;
+                right: 50px;}
+        }
+        /* Media queries for 730px width*/
+        @media(max-width: 730px){
+            .grid-container{
+                display: grid;
+                grid-template-columns: 1fr 1fr; 
+                grid-template-rows: 60px auto auto auto auto auto 100px;
+                grid-template-areas:
+                    "nav nav"
+                    "header header"
+                    "section-1 section-1"
+                    "section-2 section-2"
+                    "section-3 section-3"
+                    "section-4 section-4"
+                    "footer footer";
+            }
+
+            .section-2{
+                margin-bottom: 0px;
+            }
+
+            .section-3{
+                padding-top: 0px;
+                padding-bottom: 50px;
+            }
+
+            .section-3-box{
+                background-color: #FFFBE7;
+                display: grid; 
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 0.51fr 0.51fr 0.51fr;
+                grid-template-areas: 
+                    "box-text box-text"
+                    "smallbox-1 smallbox-1"
+                    "smallbox-2 smallbox-2"
+                    "smallbox-3 smallbox-3";
+                border-radius: 20px;
+            }
+
+            .box-text{grid-area: box-text;
+                text-align: center;}
+
+            .smallbox-1, .smallbox-2, .smallbox-3 {
+                text-align: center;
+                padding-bottom: 10px;
+                padding-top: 15px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .smallbox-1 h2, .smallbox-2 h2, .smallbox-3 h2{
+                color: white;
+                background-color:#925252;
+                border-radius: 20px;
+                width: 40px;
+                height: 40px;
+                padding-top: 5px;
+                margin: 0 auto;
+            }
+
+            .smallbox-1 h4, .smallbox-2 h4, .smallbox-3 h4{
+                color: #8a5454;
+            }
+                
+            .smallbox-1{grid-area: smallbox-1;
+                margin-left: 0px;}
+            .smallbox-2{grid-area: smallbox-2;
+                padding-left: 10px;
+                padding-right: 10px;}
+            .smallbox-3{grid-area: smallbox-3;
+                margin-right: 0px;}
+
+            .sticker-1, .sticker-2, .sticker-3{
+                transition: transform 0.2s ease;
+                cursor: pointer;
+            }
+
+            .sticker-1:hover{
+                transform: scale(1.2);
+            }
+
+            .sticker-2:hover{
+                transform: scale(1.2);
+            }
+            .sticker-3:hover{
+                transform: scale(1.2);
+            }
+
+            .section-4{grid-area: section-4;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 0.5fr 100px;
+                grid-template-areas:
+                    "text"
+                    "button-section";
+                padding-top: 50px;
+                padding-bottom: 20px;
+                padding-left: 15%;
+                padding-right: 15%;}
+            
+            .footer-credits{
+                position: relative;
+                bottom: 10px;
+                right: 40px;}
+        }
+
+        /* Media queries for 300px width*/ 
+        @media(max-width: 600px){
+            .grid-container{
+                display: grid;
+                grid-template-columns: 1fr 1fr; 
+                grid-template-rows: 60px auto auto auto auto auto 120px;
+                grid-template-areas:
+                    "nav nav"
+                    "header header"
+                    "section-1 section-1"
+                    "section-2 section-2"
+                    "section-3 section-3"
+                    "section-4 section-4"
+                    "footer footer";
+            }
+
+            .section-1{padding-top: 40px;}
+
+            .pic-2{display: none;}
+
+            .pic-3{display: none;}
+
+            .section-1-box{gap: 0px;}
+
+            .pic-1{height: 270px;}
+
+            .footer-credits{
+                margin-left: 50px;
+                margin-top: 30px;
+                text-align: center;}
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="section nav">
+            <div class="navbar">
+                <a class="nav-buttons button-1" href="final-website-1.html"><b>About</b></a>
+                <a class="nav-buttons button-2" href="final-website-2.html"><b>Donation</b></a>
+                <a class="nav-buttons button-3" href="final-website-3.html"><b>View Books</b></a>
+            </div>
+        </div>
+        <div class="section header" id="header">
+            <div class="header-container">
+                <div class="header-grid-1">
+                    <img src="images/final-website-header-1-new.png" with=auto height="420px">
+                </div>
+                <div class="header-grid-2">
+                    <h1>Empowering Young Minds in Bangladesh through Education</h1>
+                    <p>Welcome to our platform dedicated to transforming lives through the power of education. </p>
+                    <p>In Bangladesh, access to quality English language learning resources is a gateway to broader opportunities and brighter futures for countless children. </p>
+                    <p>Join us in our mission to bridge the educational gap by providing English books and nurturing language skills among young learners across Bangladesh. Together, let's unlock the  potential of every child and pave the way for a world of endless possibilities.</p>
+                    <br>
+                    <div class="button-4">
+                        <a>DONATE TODAY</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section section-1" id="section-1">
+            <div class="section-1-box">
+                <img class="pic-1" src="images/final-website-5.png" width=auto height="230px">
+                <img class="pic-2" src="images/final-website-6.png" width=auto height="230px">
+                <img class="pic-3" src="images/final-website-7.png" width=auto height="230px">
+            </div>
+        </div>
+        <div class="section section-2" id="section-2">
+            <div class="section-2-text">
+                <h1>Free Online Reading for Children from Bangladesh</h1>
+                <p>Welcome to our platform where children in Bangladesh can access a wealth of literature for free, right at their fingertips. Through our website, young readers can explore a diverse range of books online, without any cost or barriers. Join us in our mission to foster a love for reading and empower children with the gift of knowledge.</p>
+                <div class="button-5">
+                    <a href="final-website-3.html">View Our Library</a>
+                </div>
+            </div>
+        </div>
+        <div class="section section-3" id="section-3">
+            <div class="section-3-box">
+                <div class="box-text">
+                    <h1>Free Online Reading for Children from Bangladesh</h1>
+                    <p>Welcome to our platform where children in Bangladesh can access a wealth of literature for free, right at their fingertips. Through our website, young readers can explore a diverse range of books online, without any cost or barriers. Join us in our mission to foster a love for reading and empower children with the gift of knowledge.</p>
+                </div>
+                <div class="smallbox smallbox-1">
+                    <h2>1</h2>
+                    <h4>Click on the Reading Portal to get started.</h4>
+                    <img src="/images/final-8.png" width=auto height="70px" class="sticker-1">
+                </div>
+                <div class="smallbox smallbox-2">
+                    <h2>2</h2>
+                    <h4>Select a book to start reading!</h4>
+                    <img src="/images/final-9.png" width=auto height="80px" class="sticker-2" style="padding-top: 20px;" href="final-website-sub1.html">
+                </div>
+                <div class="smallbox smallbox-3">
+                    <h2>3</h2>
+                    <h4>Use interactive features to have fun!</h4>
+                    <img src="/images/final-10.png" width=auto height="100px" class="sticker-3">
+                </div>
+            </div>
+        </div>
+        <div class="section section-4" id="section-4">
+            <div class="text">
+                <img class="icon" src="/images/final-11.png" width=auto height="68px">
+                <h1>Empowering Bangladeshi Youth</h1>
+                <br>
+                <p>Our website is dedicated to fostering educational empowerment among children in Bangladesh by championing English literacy. Recognizing the transformative potential of language proficiency, especially in English, we strive to equip young minds with the tools they need to thrive in today's globalized world. </p>
+                <p>Through curated resources and targeted initiatives, we aim to break down barriers to learning and unlock opportunities for socio-economic advancement. Our purpose is clear: to cultivate a generation of confident and capable learners who can chart their own paths to success, armed with the invaluable gift of English proficiency.</p>
+            </div>
+            <div class="button-section">
+                <div class="button-6">
+                    <a>LEARN MORE</a>
+                </div>
+            </div>
+        </div>
+        <div class="section footer" id="footer">
+            <div class="footer-links">
+                <a class="footer-link link-1">Resources</a>
+                <a class="footer-link link-2">FAQs</a>
+                <a class="footer-link link-3">Policy</a>
+                <a class="footer-link link-4">Contact Us</a>
+            </div>
+            <div class="footer-credits">
+                <p><p>&copy; 2024 <a href="https://yourportfolio.com" target="_blank">Jarin Anzum</a></p></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
