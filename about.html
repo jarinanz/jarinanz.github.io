@@ -216,12 +216,12 @@
                 background-position: center;
                 background-repeat: no-repeat;
                 position: relative;
-                transition: background-size 0.3s ease;}
+                transition: background-size 0.3s ease;
+                margin-bottom: 50px;}
 
             .img1{grid-area: img1; width: 40vw; height: 30vh;}
             .img2{grid-area: img2; width: 40vw; height: 30vh;}
             .img3{grid-area: img3; height: 70vh; width: 37vw;}
-            .img-container-1{margin-bottom: 50px;}
 
             .slide-up {
                 opacity: 0;
@@ -326,7 +326,7 @@
             .grid-container {
                 display: grid;
                 grid-template-columns: 1fr; 
-                grid-template-rows: auto auto 60px; 
+                grid-template-rows: auto auto 70px; 
                 grid-template-areas: 
                     "nav"
                     "main"
@@ -350,7 +350,7 @@
         }
 
         @media(max-width: 550px){
-            .img-container-1{background-size: 400px;}
+            .img-container-1{background-size: 320px;}
         }
     </style>
 </head>
