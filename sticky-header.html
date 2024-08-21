@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll to Sticky Header</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            padding: 20px;
+            height: 2000px; /* Large height to allow for scrolling */
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: top 0.3s, position 0.3s;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            bottom: auto; /* Prevent the header from sticking to the bottom */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <!-- Add more content here to allow for scrolling -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <!-- Add more content -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </section>
+    </main>
+
+    <header id="header">
+        <h1>Sticky Header</h1>
+    </header>
+
+    <script>
+        window.onscroll = function() { makeHeaderSticky() };
+
+        var header = document.getElementById("header");
+        var stickyPoint = header.offsetTop;
+
+        function makeHeaderSticky() {
+            if (window.pageYOffset >= stickyPoint) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+</body>
+</html>

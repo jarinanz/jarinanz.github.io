@@ -171,26 +171,17 @@
         .design-1{grid-area: design-1; padding-left: 10%; padding-right: 10%;
             padding-top: 10px;}
 
-        .design-1 h1, .testing h1{font-size: 23px; margin-bottom: 20px;}
+        .design-1 h1{font-size: 23px; margin-bottom: 25px;}
 
         .flex-6{display: flex; gap: 60px;}
         .img-9 img{width: 100%; height: auto;}
-        .img-userflow img{width: 100%; height: auto;}
-        .img-10{text-align: center;}
-        .img-10 img{width: 80%; height: auto;}
+        .img-10 img{width: 100%; height: auto; border-radius: 20px;}
 
         .design-2{grid-area: design-2; padding-left: 10%; padding-right: 10%;}
 
         .testing{grid-area: testing; padding-left: 10%; padding-right: 10%;
             padding-top: 10px;}
         
-        .testing h3{margin-bottom: 5px;}
-        .flex-7{display: flex; gap: 50px;}
-        .img-11 img{width: 100%; height: auto;}
-        .img-12 img{width: 100%; height: auto;}
-        .img-13{text-align: center; margin-top: 25px;}
-        .img-13 img{width: 85%; height: auto;}
-
         .img-6 {text-align: center;}
         .img-6 img{width: 100%; height: auto;}
         .img-7, .img-8{display: none;}
@@ -223,7 +214,8 @@
         .footer p { color: #905565; font-size: 17px; font-family: Inter; font-weight: 500; line-height: normal; }
         
         @media (max-width: 1240px){
-            .user-flow{padding-top: 28px;}}
+            .user-flow{padding-top: 20px;}
+        }
 
         @media (max-width: 1040px) {
             .header-1 { column-gap: 80px; }
@@ -243,15 +235,15 @@
             .img-7{display: block; text-align: center;}
             .img-7 img{width: 70%; height: auto;}
             .img-6, .img-8{display: none;}
-            .img-9 img, .img-userflow img{width: 110%; height: auto;}
-            .flex-6{row-gap: 50px;}
-            .flex-7{gap:20px;}}
+            .img-9 img{width: 110%; height: auto;}
+            .img-10 img{width: 110%; height: auto;}
+            .flex-6{row-gap: 20px;}}
     
         @media (max-width: 720px){
-            .flex-6, .flex-7{flex-direction: column; gap: 10px;}
-            .img-9, .img-userflow, .img-10, .img-11, .img-12{text-align: center;}
-            .img-9 img, .img-userflow img, .img-10 img, .img-11 img, .img-12 img{width: 90%;}}
+            .flex-6{flex-direction: column;}
+            .img-9, .img-10{text-align: center;}
 
+            
         
         @media (max-width: 700px) {
             .grid-container {
@@ -271,8 +263,8 @@
                     "testing"
                     "results"
                     "reflections"
-                    "footer";}
-                    
+                    "footer";
+            }
             .header-1 {
                 grid-template-columns: 1fr;
                 grid-template-rows: auto auto;
@@ -282,6 +274,7 @@
             }
             .img-1 { margin-bottom: 30px; }
             .img-1 img { width: 80%; }
+            .navigation { padding: 20px 8%; }
             .nav-links { display: none; }
             .hamburger {
                 display: block;
@@ -349,8 +342,8 @@
             .img-7 img{width: 90%; height: auto;}
 
             .flex-6{display: flex; flex-direction: column; row-gap: 20px;}
-            .img-9 img, .img-userflow img, .img-10 img{width: 90%; height: auto;}
-            .img-13 img{width: 100%;}}
+            .img-9 img{width: 90%; height: auto;}
+            .img-10 img{width: 90%; height: auto;}}
 
         @media(max-width: 550px) {
             .intro {gap: 7%;}
@@ -358,15 +351,17 @@
             .img-5{text-align: center;}
             .img-5 img{width: 50%; height: auto;}
             .img-5 {display: block;}
-            .img-7 img, .img-9 img, .img-userflow img, .img-10 img{width: 100%; height: auto;}}
-
-        .sticky-menu {
+            .img-7 img{width: 100%; height: auto;}}
+            .sticky-menu {
                 position: -webkit-sticky;
                 position: sticky;
                 top: 0;
                 z-index: 100;
                 background-color: #ffffff;
-                border-bottom: 1px solid #6b79a3;}
+                border-bottom: 1px solid #6b79a3; 
+            }
+            .img-9 img{width: 100%; height: auto;}
+            .img-10 img{width: 100%; height: auto;}}
     </style>
 </head>
 <body>
@@ -479,6 +474,15 @@
                     </div>
                     <div class="carousel-1"></div>
                 </div>
+                <br>
+                <h2>How do students understand complex information?</h2>
+                <div class="flex-4">
+                    <div class="paragraph-1">
+                        <p>One of the pain points that I found interesting was that students found CUNYfirst's interface confusing due to complex information.</p>
+                        <p>I was curious about how I can improve the interface and help students understand key information (ex: financial aid info and etc) more easily.</p>
+                        <p>Thus, I researched about students' learning styles to find which are most effective for understanding information for college students.</p>
+                    </div>
+                </div>
             <br>
             <br>
             <hr>
@@ -497,18 +501,15 @@
                 </div>
                 </div>
                 <div class="user-flow">
-                    <h1>🗺️ User Flow</h1>
-                    <div class="img-userflow">
+                    <h1>🪀 User Flow</h1>
+                    <div class="img-10">
                         <img src="images/cunyimg-9.png" width=auto height="200px">
                     </div>
                 </div>
             </div>
         </div>
         <div class="section wireframe"></div>
-        <br>
-        <br>
         <div class="section design-2">
-            <h2>Key Design solutions</h2>
             <br>
             <br>
             <hr>
@@ -533,43 +534,14 @@
             <div class="long-block">
                 <h2>Key Findings from User Testing</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <br>
-                <div class="img img-10">
-                    <img src="images/cunyimg-10.png" width=auto height="200px;">
-                </div>
-                <br>
-                <br>
-                <div class="flex-7">
-                    <div class="box-1">
-                        <h1>✅ What Worked?</h1>
-                        <div class="img-11">
-                            <img src="images/cunyimg-11.png" width=auto height= "200px">
-                        </div>
-                    </div>
-                    <div class="box-2">
-                        <h1>❌ Constraints</h1>
-                        <div class="img-12">
-                            <img src="images/cunyimg-12.png" width=auto height="200px">
-                        </div>
-                    </div>
-                </div>
+                <div class="flex-7"></div>
             </div>
-            <br>
-            <br>
             <div class="long-block">
-                <h2>How can these constraints be fixed?</h2>
+                <h2>How can these User Pain Points be fixed?</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                 <div class="card"></div>
             </div>
-            <br>
-            <div class="long-block">
-                <h2>Iteration Results</h2>
-                <p>After user testing the  app iteration with 4 students, I found that their previous constraints were resolved. The results showed that users:</p>
-                <div class="img img-13">
-                    <img src="images/cunyimg-13.png" width=auto height="200px">
-                </div>
-            </div>
-            <br>
+            <div class="img"></div>
             <br>
             <br>
             <hr>
@@ -591,7 +563,7 @@
             <p>During interviews and user testing, I struggled to find more students due to their busy schedules. As a result, I learned to use and prioritize quick and efficient methods like sending surveys and being flexible with app testing times.</p>
             <br>
             <div class="card-3">
-                <h2>🌠 What’s next for CUNYfirst app?</h2>
+                <h2>What’s next for CUNYfirst app?</h2>
                 <p>1. Improve interface accessibility for disabled students, international students, and CUNY faculty</p>
                 <p>2. Improve Course Registration, especially the Schedule Builder interface in CUNYfirst</p>
                 <p>3. Clarify which ePermitted course credits have transferred to the home college</p>
