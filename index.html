@@ -146,9 +146,9 @@
             width: 82vw;
             height: auto;
             max-width: 100%;
-            background-color: #FFF6FF;
-            padding-top: 3vw;
-            padding-bottom: 3vw;
+            background-color: #FFFBF0;
+            padding-top: 2vw;
+            padding-bottom: 2vw;
             padding-left: 8vw; 
             padding-right: 8vw;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -159,13 +159,15 @@
             font-weight: 400;
             font-style: normal;}
 
+        .card1 a{text-decoration: none;}
+
         .box1{width: 90vw; 
             height: 240px;
             background-image: url("images/health-app.png");
             background-position: center;
             background-repeat: no-repeat;
             background-size: 320px;
-            background-color: #FFCDD3;
+            background-color: #FFCDD3; 
             position: relative;
             border-radius: 15px;
             transition: background-size 0.3s ease;
@@ -187,9 +189,9 @@
             width: 82vw;
             height: auto;
             max-width: 100%;
-            background-color: #FFFBF0;
-            padding-top: 2vw;
-            padding-bottom: 2vw;
+            background-color: #FFF6FF;
+            padding-top: 4vw;
+            padding-bottom: 4vw;
             padding-left: 8vw; 
             padding-right: 6vw;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -201,7 +203,7 @@
             font-weight: 500;
             font-style: normal;}
         
-        .box2{width: 120vw; 
+        .box2{width: 140vw; 
             height: 260px; 
             background-image: url("images/cuny-app.png");
             background-position: center;
@@ -256,7 +258,7 @@
 
         @media(max-width: 1100px){
             .box1{width: 100vw; height: 220px;} 
-            .box2{width: 130vw; height: 260px;}
+            .box2{width: 150vw; height: 260px;}
 
             .box1, .box2{background-size: 280px;}
             .box1:hover{background-size: 300px;}
@@ -269,7 +271,7 @@
             .card1, .card2{padding-left: 5vw; 
                     padding-right: 5vw;}
             .box1{width: 140vw; height: 270px;} 
-            .box2{width: 180vw; height: 280px;}
+            .box2{width: 190vw; height: 280px;}
         }
 
         @media(max-width: 900px){
@@ -486,18 +488,20 @@
             <h2 class="fade-in-text" style="font-size: 28px; font-style: normal; font-weight: 700; line-height: normal;">📌 Featured Projects</h2>
             <br>
             <div class="card1 slide-up">
-                <div class="box1"></div>
+                <div class="box2"></div>
                 <div class="text1">
-                    <h1 style="font-size: 27px; font-style: normal; font-weight: 700; line-height: normal;">Health+</h1>
-                    <p>A comprehensive app for individuals to help them manage their prescriptions, medical records, clinical visits, and more.</p>
-                    <p class="button-view">Work in Progress 🔒</p>
+                    <h1 style="font-size: 27px; font-style: normal; font-weight: 700; line-height: normal;">CUNYfirst</h1>
+                    <p>A management app for CUNY students and faculty, integrating the redesigned CUNYfirst website for easy access to academic and financial details anytime, anywhere.</p>
+                    <a href="case-study-1.html">
+                        <p class="button-view" id="view-project">View Project</p>
+                    </a>
                 </div>
             </div>
             <div class="card2 slide-up">
-                <div class="box2"></div>
+                <div class="box1"></div>
                 <div class="text2">
-                    <h1 style="font-size: 27px; font-style: normal; font-weight: 700; line-height: normal;">CUNYfirst</h1>
-                    <p>A management app for CUNY students and faculty, integrating the redesigned CUNYfirst website for easy access to academic and financial details anytime, anywhere.</p>
+                    <h1 style="font-size: 27px; font-style: normal; font-weight: 700; line-height: normal;">Health+</h1>
+                    <p>A comprehensive app for individuals to help them manage their prescriptions, medical records, clinical visits, and more.</p>
                     <p class="button-view">Work in Progress 🔒</p>
                 </div>
             </div>
