@@ -36,7 +36,7 @@
         /* sub-heading */
 
         /* regular text */
-        .overview p, .research p, .design-1 p, .design-12 p, .testing p, .results p, .reflections p{
+        .overview p, .research p, .design-1 p, .design-2 p, .testing p, .results p, .reflections p{
             font-family: Inter;
             font-size: 18px;
             font-style: normal;
@@ -49,9 +49,9 @@
         .card-3{border-radius: 20px; padding: 20px 40px;}
 
         .button-prototype{text-decoration: none;}
-        
+    
         .button-prototype p{
-            background-color: #4b5f9b;
+            background-color: #163691;
             border-radius: 20px;
             width: 220px;
             padding: 3px 20px;
@@ -234,7 +234,7 @@
 
         .next {right: 0px;}
 
-        .img-33 img, .img-34 img, .img-35 img, .img-36 img{width: 100%; height: auto;}
+        .img-33 img, .img-34 img, .img-35 img, .img-36 img, .img-37 img{width: 100%; height: auto;}
 
         .design-1{grid-area: design-1; padding-left: 10%; padding-right: 10%;
             padding-top: 10px;}
@@ -363,17 +363,18 @@
         @media (max-width: 1240px){
             .user-flow{padding-top: 28px;}
             .img-results img{width: 100%;}
-            .flex-3{display: flex; flex-direction: column; gap: 20px;}}
+            .flex-3{display: flex; flex-direction: row; gap: 20px;}}
 
         @media (max-width: 1040px) {
             .header-1 { column-gap: 80px; }
-            .img-1 img { width: 100%; }
+            .img-1 img { width: 100%;}
             .menu ul { gap: 4%; text-align: center; }
             .card-1 p, .card-2 p{font-size: 17px}
             .img-4 img{width: 100%; height: auto;}
             .img-userflow {height: 82%;}
             .flex-img{gap: 30px;}
-            .flex-img-2{gap: 20px;}}
+            .flex-img-2{gap: 20px;}
+            .img-37 img{width: 80%;}}
 
         @media(max-width: 900px) {
             .img-1 img { width: 120%; }
@@ -399,7 +400,10 @@
             .img-9, .img-userflow, .img-10, .img-11, .img-12{text-align: center;}
             .img-9 img, .img-10 img, .img-11 img, .img-12 img{width: 90%;}
             .user-flow{padding-top: 5px;}
-            .img-userflow {width: 70vw; height: 300px; margin-left: 5%;}}
+            .img-userflow {width: 70vw; height: 300px; margin-left: 5%;}
+            .img-37{text-align: center;}
+            .img-37 img{width: 90%;}
+            .flex-3{display: flex; flex-direction: column; gap: 30px;}}
 
         
         @media (max-width: 700px) {
@@ -512,7 +516,8 @@
             .img-5 img{width: 50%; height: auto;}
             .img-5 {display: block;}
             .img-7 img, .img-9 img, .img-userflow img, .img-10 img{width: 100%; height: auto;}
-            .img-userflow {width: 75vw; height: 300px; margin-left: 2%;}}
+            .img-userflow {width: 75vw; height: 300px; margin-left: 2%;}
+            .img-37 img{width: 100%;}}
 
         .sticky-menu {
                 position: -webkit-sticky;
@@ -594,15 +599,15 @@
         <div class="section overview" id="overview">
             <h3 class="title">Overview</h3>
             <h2>What is CUNYfirst?</h2>
-            <p>CUNYFirst is an administrative system used by students, faculty, and staff at CUNY (City University of New York) to manage various academic and administrative tasks, such as course registration, grade tracking, and financial aid management.</p>
+            <p>CUNYFirst is an administrative system used by students, faculty, and staff at CUNY (City University of New York) to manage various academic and administrative tasks, such as course registration, grade tracking, and financial aid management at CUNY.</p>
             <div class="flex-1">
                 <div class="card card-1">
                     <h2>🎯 Problem</h2>
-                    <p>CUNY students often struggle with accessing CUNYfirst on mobile devices due to the platform's lack of mobile accessibility and disorganized interface. This issue creates challenges for students who need to manage academic and administrative tasks on-the-go.</p>
+                    <p><b>CUNY students</b> often struggle with accessing CUNYfirst on mobile devices due to the platform's <b>lack of mobile accessibility</b> and confusing interface. This issue creates challenges for students who need to manage academic and administrative tasks <b>on-the-go</b>.</p>
                 </div>
                 <div class=" card card-2">
                     <h2>✅ Solution</h2>
-                    <p>A CUNYFirst Mobile App with a user-friendly interface has been designed to provide students easy access to CUNYfirst on smartphones and tablets. This app allows students to manage their academic and administrative tasks with ease, anytime and anywhere.</p>
+                    <p>A <b>CUNYFirst Mobile App</b> with a user-friendly interface has been designed to provide students <b>easy access to CUNYfirst</b> on smartphones and tablets. This app allows students to manage their academic and administrative tasks with ease, anytime and anywhere.</p>
                 </div>
             </div>
             <br>
@@ -614,7 +619,7 @@
             <h3 class="title">User Research</h3>
                 <div class="long-block">
                     <h2>Research Goals</h2>
-                    <p>To understand why students are having difficulties navigating CUNYFirst, I designed and distributed a survey to CUNY students about their experiences using the CUNYfirst platform.</p>
+                    <p>To understand why students are having difficulties navigating CUNYFirst, I <span class="highlight">designed and distributed a survey</span> to CUNY students about their experiences using the CUNYfirst platform.</p>
                     <h3>In this survey, I wanted to understand and find about: </h3>
                     <div class="img img-4">
                         <img src="images/cunyimg-4.png" width=auto height="200px">
@@ -625,12 +630,10 @@
                 </div>
                 <br>
                 <h2>Survey Findings</h2>
+                <p>After the survey was distributed, 10 CUNY students responded. These were the key insights about their CUNYfirst experience based on the survey results:</p>
                 <div class="flex-3">
-                    <div class="paragraph">
-                        <p>After the survey was distributed, 10 CUNY students responded. These were the key insights about their CUNYfirst experience based on the survey results:</p>
-                        <p><b>• Common devices used</b> --> PC and smartphone, with occasional outdoor or on-the-go access.</p>
-                        <p><b>• Pain Points</b> --> Responsiveness issues, disorganized interface, confusing navigation, lack of accessibility.</p>
-                        <p><b>• Frequently used features</b> --> Class Registration, Class Schedule, Academic History, Financial Aid.</p>
+                    <div class="img img-37">
+                        <img src="images/cunyimg-37.png">
                     </div>
                     <div class="carousel" id="carousel1">
                         <div class="carousel-inner">
@@ -641,10 +644,10 @@
                                 <img src="images/cunyimg-33.png" alt="Slide 1">
                             </div>
                             <div class="carousel-item">
-                                <img src="images/cunyimg-34.png" alt="Slide 2">
+                                <img src="images/cunyimg-35.png" alt="Slide 2">
                             </div>
                             <div class="carousel-item">
-                                <img src="images/cunyimg-35.png" alt="Slide 3">
+                                <img src="images/cunyimg-34.png" alt="Slide 3">
                             </div>
                             <div class="carousel-item">
                                 <img src="images/cunyimg-36.png" alt="Slide 4">
@@ -735,7 +738,7 @@
         </div>
         <div class="section design-2">
             <h2>Key Design solutions</h2>
-            <p>Hello</p>
+            <p>After brainstorming ideas and wireframing, I began creating prototypes for the app. Here are the key design solutions I developed to address the students' pain points identified in the survey.</p>
             <br>
             <div class="flex-img">
                 <div class="img img-23">
@@ -757,7 +760,7 @@
         <div class="section testing" id="testing">
             <h3 class="title">User Testing</h3>
             <div class="long-block">
-                <h2>Goals for User Testing</h2>
+                <h2>What are my Goals for User Testing?</h2>
                 <p>After designing the app interface, I began preparing for user testing sessions to see if the designs addressed the users’ pain points or if additional iterations were needed.</p>
                 <h3 styles="color: black;">For the User Testing, I wanted to understand and find out:  </h3>
                 <div class="img img-6">
@@ -773,7 +776,7 @@
             <br>
             <div class="long-block">
                 <h2>Key Findings from User Testing</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>App testing showed students were less fraustrated and easily navigated most features, especially Financial Aid, Course Grades, and Notifications & Tasks. However, ePermit applications and Tuition Payments posed challenges, suggesting a need for improved guidance in these areas.</p>
                 <br>
                 <div class="img img-10">
                     <img src="images/cunyimg-10.png" width=auto height="200px;">
@@ -799,7 +802,9 @@
             <br>
             <div class="long-block">
                 <h2>How can these constraints be fixed?</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>While most app sections worked well, the ePermit and Tuition Payment sections had usability issues requiring design improvements. I brainstormed design solutions for these new pain points and updated the relevant parts of the sections.</p>
+                <h3>Here are the design solutions for the new pain points:</h3>
+                <br>
                 <div class="card flex-img-2">
                     <div class="img img-27">
                         <img src="images/cunyimg-27.png" width=auto height="430px">
@@ -831,8 +836,9 @@
         </div>
         <div class="section results" id="results">
             <h3 class="title">Results</h3>
-            <h2>How does the CUNYfirst app compare to the existing platform?</h2>
-            <p>The CUNYfirst app is more user-friendly and efficient than the current platform, offering quicker access to services like class registration, grades, and financial aid. Its modern interface is easier to navigate, making it simpler for users to manage their academic and administrative tasks on the go.</p>
+            <h2>How does the CUNYfirst app compare to its mobile site?</h2>
+            <p>CUNY students often struggle to access the CUNYfirst website on mobile devices due to its poor mobile accessibility and confusing interface. The new CUNYfirst mobile app, with its redesigned user-friendly interface, helps students quickly navigate CUNYfirst and manage their academic and administrative tasks on the go.</p>
+            <p>Morevoer, students found the CUNYfirst app more engaging and easier to use than the mobile site of CUNYfirst.</p>
             <a href="https://www.figma.com/proto/Yr73uT5Z1myEeK1Bs13eKj/View-Prototype?node-id=1-225&t=FCXriJqPMkGAELAV-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A225" target="_blank" class="button-prototype"><p>View Final Prototype</p></a>
             <br>
             <div class="flex-img-3">
@@ -860,6 +866,7 @@
                 <p>2. Improve Course Registration, especially the Schedule Builder interface in CUNYfirst</p>
                 <p>3. Clarify which ePermitted course credits have transferred to the home college</p>
             </div>
+            <br><br>
         </div>
         <div class="section footer">
             <p class="fade-in-text">Designed and Coded by Jarin © 2024</p>
